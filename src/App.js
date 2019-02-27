@@ -46,8 +46,9 @@ class App extends Component {
     let newDeck = this.state.deck.map(card => {
       return {...card}
     });
+    if (newDeck[cardIndex].isFlipped) return;
     newDeck[cardIndex].isFlipped = true;
-
+    
     let newPickedCards = this.state.pickedCards.concat(cardIndex);
 
     // if they've just selected their second card, compare the two.
